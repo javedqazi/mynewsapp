@@ -67,16 +67,14 @@ export class News extends Component {
     }
     
     async componentDidMount(){
-      console.log("cdm");
       let url=" https://newsapi.org/v2/top-headlines?country=us&apiKey=ecdef779bf994aebabcc7d0f77710069";
       let data= await fetch(url);      
       let parseData=await data.json()
       console.log(parseData);
-      this.setState({articles:parseData.articles})
-    
+      this.setState({articles:this.articles})
     }
   render () {
-    
+
     return (      
         <div className="container my-3">
           <h2>NewsMonkey-Top Headlines</h2>          
